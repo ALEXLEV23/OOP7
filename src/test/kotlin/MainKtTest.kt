@@ -5,7 +5,7 @@ class MainKtTest {
 
     @Test
     fun add() {
-        val post = Post(id = 0)
+        val post = Post(id = 1)
         val expected = 1
         WallService.add(post)
         val result = WallService.add(post).id
@@ -27,7 +27,7 @@ class MainKtTest {
     @Test
     fun update_false() {
         val post1 = Post(id = 1)
-        val post2 = Post(id = 1, text = "newText")
+        val post2 = Post(id = 14343, text = "newText")
         WallService.add(post1)
 
         val result = WallService.update(post2)

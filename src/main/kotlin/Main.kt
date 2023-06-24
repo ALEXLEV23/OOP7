@@ -77,17 +77,17 @@
     }
 
     object WallService {
-        private var posts = emptyArray<Post>()
 
-        fun add(post: Post): Post {
-            posts += post.copy(id = posts.indexOf(post) + 1)
+        private var posts = emptyArray<Post>()
+        fun add(post: Post): Post{
+            posts += post
             return posts.last()
         }
 
         fun update(post: Post): Boolean {
             for ((index, item) in posts.withIndex()) {
                 if (item.id == post.id) {
-                    posts[index] = post.copy(id = post.id, date = post.date)
+                    posts[index] = post.copy(date = item.date)
                     return true
                 }
             }
@@ -96,8 +96,8 @@
     }
 
     fun main() {
-        val post1 = Post(id = 11)
-        val post2 = Post(id = 11, text = "newText")
+        val post1 = Post(id = 0)
+        val post2 = Post(id = 1, text = "newText")
 
         WallService.add(post1)
 
