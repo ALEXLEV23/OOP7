@@ -79,6 +79,11 @@
     object WallService {
 
         private var posts = emptyArray<Post>()
+
+        fun clear() {
+            posts = emptyArray()
+        }
+
         fun add(post: Post): Post{
             posts += post
             return posts.last()
