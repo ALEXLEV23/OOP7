@@ -37,15 +37,8 @@ class MainKtTest {
     }
 }
 
-class WallServiceTest {
-
-    @Before
-    fun clearBeforeTest() {
-        WallService.clear()
-    }
-
-    @Test
-    fun updateExisting() {
-        WallService.clear()
-    }
+@Before
+fun clearBeforeTest() {
+    WallService.clear()
 }
+
