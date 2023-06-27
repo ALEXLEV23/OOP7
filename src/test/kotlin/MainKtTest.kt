@@ -16,7 +16,7 @@ class MainKtTest {
 
     @Test
     fun update_true() {
-        val post1 = Post(id = 0)
+        val post1 = Post(id = 1)
         val post2 = Post(id = 1, text = "newText")
         WallService.add(post1)
 
@@ -35,10 +35,12 @@ class MainKtTest {
 
         assertFalse(result)
     }
+
+    @Before
+    fun clearBeforeTest() {
+        WallService.clear()
+    }
 }
 
-@Before
-fun clearBeforeTest() {
-    WallService.clear()
-}
+
 
